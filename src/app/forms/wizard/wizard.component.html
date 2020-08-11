@@ -1,0 +1,288 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 mr-auto ml-auto">
+        <!--      Wizard container        -->
+        <div class="wizard-container">
+          <div class="card card-wizard" data-color="rose" id="wizardProfile">
+            <form [formGroup]="type" action="" method="">
+              <!--        You can switch " data-color="primary" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
+              <div class="card-header text-center">
+                <h3 class="card-title">
+                  Veuillez passer votre commande
+                </h3>
+              </div>
+              <div class="wizard-navigation">
+                <ul class="nav nav-pills">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active"
+                      href="#technique"
+                      data-toggle="tab"
+                      role="tab"
+                    >
+                      Technique
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="#chargerfichier"
+                      data-toggle="tab"
+                      role="tab"
+                    >
+                      Charger Fichier
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="#information"
+                      data-toggle="tab"
+                      role="tab"
+                    >
+                      Information
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="tab-content">
+                  <div class="tab-pane active" id="technique">
+                    <h5 class="info-text">Veuillez choisir une technique</h5>
+                    <div class="row justify-content-center">
+                      <div class="col-lg-10">
+                        <div class="row" formControlName="tech" required>
+                          <div class="col-sm-4">
+                            <div class="tim-typo" style="text-align: center;">
+                              <div class="choice" data-toggle="wizard-radio">
+                                <input
+                                  type="radio"
+                                  name="tech"
+                                  value="Fraisage"
+                                  required
+                                />
+                                <div class="icon">
+                                  <img
+                                    src="../../../assets/img/Tech/fraisage.png"
+                                    class="card-img-top mt-2 cardPad"
+                                    alt="..."
+                                  />
+                                </div>
+                                <h6 style="font-weight: 1000;">Fraisage</h6>
+                                <p>
+                                  <small
+                                    >Le fraisage est l'enlèvement de matière
+                                    sous forme de copeaux.
+                                  </small>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-4">
+                            <div class="tim-typo" style="text-align: center;">
+                              <div class="choice" data-toggle="wizard-radio">
+                                <input
+                                  type="radio"
+                                  name="tech"
+                                  value="Impression 3D"
+                                />
+                                <div class="icon">
+                                  <img
+                                    src="../../../assets/img/Tech/impression.png"
+                                    class="card-img-top mt-2 cardPad"
+                                    alt="..."
+                                  />
+                                </div>
+                                <h6 style="font-weight: 1000;">
+                                  Impression 3D
+                                </h6>
+                                <p>
+                                  <small
+                                    >L'impression 3D est la fabrication des
+                                    pièces par agglomération de matière.
+                                  </small>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-4">
+                            <div class="tim-typo" style="text-align: center;">
+                              <div class="choice" data-toggle="wizard-radio">
+                                <input
+                                  type="radio"
+                                  name="tech"
+                                  value="Découpe Laser"
+                                />
+                                <div class="icon">
+                                  <img
+                                    src="../../../assets/img/Tech/laser.png"
+                                    class="card-img-top mt-2 cardPad"
+                                    alt="..."
+                                  />
+                                </div>
+                                <h6 style="font-weight: 1000;">
+                                  Découpe Laser
+                                </h6>
+                                <p>
+                                  <small
+                                    >La découpe laser consiste à découper la
+                                    matière grâce au laser.
+                                  </small>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="chargerfichier">
+                    <h5 class="info-text">
+                      Formats pris en charge: PDF, AI , PSD, STL , DXF, DWG ,JPG
+                      ,PNG,RAR
+                    </h5>
+                    <div class="row justify-content-center">
+                      <div class="col-sm-4">
+                        <div class="picture-container">
+                          <div class="picture">
+                            <img
+                              src="../../../assets/img/upload2.png"
+                              class="picture-src"
+                              id="wizardPicturePreview"
+                              title=""
+                            />
+                            <input type="file" id="wizard-picture" required />
+                          </div>
+                          <h6>Choisir fichier</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="information">
+                    <div class="row justify-content-center">
+                      <div class="col-sm-12">
+                        <h5 class="info-text">
+                          Adresse de livraison
+                        </h5>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="input-group form-control-lg">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">record_voice_over</i>
+                            </span>
+                          </div>
+                          <mat-form-field
+                            class="example-full-width has-label"
+                            [ngClass]="displayFieldCss(type, 'lastName')"
+                          >
+                            <input
+                              type="text"
+                              name="lastname"
+                              matInput
+                              id="text"
+                              placeholder="Nom"
+                              formControlName="lastName"
+                            />
+                          </mat-form-field>
+                        </div>
+                        <div class="input-group form-control-lg">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">face</i>
+                            </span>
+                          </div>
+                          <mat-form-field
+                            class="example-full-width has-label"
+                            [ngClass]="displayFieldCss(type, 'firstName')"
+                          >
+                            <input
+                              type="text"
+                              name="firstname"
+                              matInput
+                              id="text"
+                              placeholder="Prénom"
+                              formControlName="firstName"
+                            />
+                          </mat-form-field>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-7">
+                        <mat-form-field class="example-full-width">
+                          <input matInput type="text" placeholder="Adresse" />
+                        </mat-form-field>
+                      </div>
+                      <div class="col-sm-3">
+                        <mat-form-field class="example-full-width">
+                          <input
+                            matInput
+                            type="number"
+                            placeholder="Code Postal"
+                          />
+                        </mat-form-field>
+                      </div>
+                      <div class="col-sm-5">
+                        <mat-form-field class="example-full-width">
+                          <input
+                            matInput
+                            type="number"
+                            placeholder="Numéro de téléphone"
+                          />
+                        </mat-form-field>
+                      </div>
+                      <div class="col-sm-5">
+                        <mat-form-field>
+                          <mat-select placeholder="Ville" name="city">
+                            <mat-option
+                              *ngFor="let city of cities"
+                              [value]="city.value"
+                            >
+                              {{ city.viewValue }}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="mr-auto">
+                  <input
+                    type="button"
+                    class="btn btn-previous btn-fill btn-default btn-wd disabled"
+                    name="previous"
+                    value="Précedent"
+                  />
+                </div>
+                <div class="ml-auto">
+                  <div class="places-sweet-alerts">
+                    <input
+                      type="button"
+                      class="btn btn-next btn-fill btn-rose btn-wd"
+                      name="next"
+                      value="Suivant"
+                      mat-raised-button
+                    />
+                  </div>
+                  <input
+                    type="button"
+                    class="btn btn-finish btn-fill btn-rose btn-wd"
+                    name="finish"
+                    value="Finish"
+                    style="display: none;"
+                  />
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- wizard container -->
+      </div>
+    </div>
+  </div>
+</div>

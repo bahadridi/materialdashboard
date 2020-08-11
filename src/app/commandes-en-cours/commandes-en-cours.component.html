@@ -1,0 +1,36 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-icon card-header-warning">
+            <div class="card-icon">
+              <i class="material-icons">donut_large</i>
+            </div>
+            <h4 class="card-title">Commandes En Cours</h4>
+          </div>
+          <div class="card-body table-full-width">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th *ngFor="let cell of histo.headerRow">
+                      {{ cell }}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let row of histo.dataRows">
+                  <tr>
+                    <td *ngFor="let cell of row">
+                      {{ cell }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

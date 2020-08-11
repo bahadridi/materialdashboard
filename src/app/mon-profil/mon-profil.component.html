@@ -1,0 +1,148 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header card-header-icon card-header-warning">
+            <div class="card-icon">
+              <i class="material-icons">perm_identity</i>
+            </div>
+            <h4 class="card-title">
+              Mon Profil -
+              <small class="category">Paramètres du compte</small>
+            </h4>
+          </div>
+          <div class="card-body">
+            <form (submit)="userUpdate()">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Prénom</label>
+                    <input
+                      type="text"
+                      name="prenom"
+                      class="form-control"
+                      [(ngModel)]="user.prenom"
+                      [value]="user.prenom"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Nom</label>
+                    <input
+                      type="text"
+                      name="nom"
+                      class="form-control"
+                      [(ngModel)]="user.nom"
+                      [value]="user.nom"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      class="form-control"
+                      [(ngModel)]="user.email"
+                      [value]="user.email"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating"
+                      >Numéro de téléphone</label
+                    >
+                    <input
+                      type="tel"
+                      name="num"
+                      pattern="[0-9]{8}"
+                      class="form-control"
+                      [(ngModel)]="user.num"
+                      [value]="user.num"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Adresse</label>
+                    <input
+                      type="text"
+                      name="adresse"
+                      class="form-control"
+                      [(ngModel)]="user.adresse"
+                      [value]="user.adresse"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <mat-form-field>
+                      <mat-select
+                        [(value)]="user.ville"
+                        placeholder="Ville"
+                        name="city"
+                      >
+                        <mat-option
+                          *ngFor="let city of cities"
+                          [value]="city.value"
+                        >
+                          {{ city.viewValue }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Code Postal</label>
+                    <input
+                      type="text"
+                      name="codepostal"
+                      class="form-control"
+                      [(ngModel)]="user.codepostal"
+                      [value]="user.codepostal"
+                      minlength="4"
+                      maxlength="4"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">
+                      Dites nous quelque chose à propos de vous</label
+                    >
+                    <textarea
+                      class="form-control"
+                      name="infos"
+                      rows="5"
+                      [(ngModel)]="user.infos"
+                      [value]="user.infos"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <button
+                mat-raised-button
+                type="submit"
+                class="btn btn-rose pull-right"
+              >
+                Sauvegarder
+              </button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
