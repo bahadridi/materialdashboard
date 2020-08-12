@@ -30,7 +30,6 @@ export class HistoriqueComponent implements OnInit, AfterViewInit {
         "Technique",
         "Prix (DT)",
         "Quantité",
-        "Fichier",
         "Actions",
       ],
 
@@ -52,14 +51,17 @@ export class HistoriqueComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     $("#datatables").DataTable({
       pagingType: "full_numbers",
+      bLengthChange: false,
+      bInfo: false,
       lengthMenu: [
         [5, 10, 15, -1],
         [5, 10, 15, "All"],
       ],
+
       responsive: true,
       language: {
         search: "_INPUT_",
-        searchPlaceholder: "Search records",
+        searchPlaceholder: "Chercher",
       },
     });
 

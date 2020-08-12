@@ -66,12 +66,12 @@ import { VerificationComponent } from "./admin/machine-owner/verification/verifi
 import { ClientsComponent } from "./admin/clients/clients.component";
 import { TechniciansComponent } from "./admin/technicians/technicians.component";
 import { BreakdownsComponent } from "./technician/breakdowns/breakdowns.component";
-import { ProfileComponent } from './client/profile/profile.component';
-import { StatsComponent } from './client/stats/stats.component';
-import { DemandsPendingComponent } from './client/demands-pending/demands-pending.component';
-import { DemandsRecordsComponent } from './client/demands-records/demands-records.component';
-import { QuotesComponent } from './client/quotes/quotes.component';
-import { SidebarComponent } from './client/sidebar/sidebar.component';
+import { ProfileComponent } from "./client/profile/profile.component";
+import { StatsComponent } from "./client/stats/stats.component";
+import { DemandsPendingComponent } from "./client/demands-pending/demands-pending.component";
+import { DemandsRecordsComponent } from "./client/demands-records/demands-records.component";
+import { QuotesComponent } from "./client/quotes/quotes.component";
+import { SidebarComponent } from "./client/sidebar/sidebar.component";
 
 @NgModule({
   exports: [

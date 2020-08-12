@@ -1,5 +1,6 @@
 import { Routes , ExtraOptions , RouterModule } from "@angular/router";
 
+import {NgModule} from '@angular/core';
 import { AdminLayoutComponent } from "./layouts/admin/admin-layout.component";
 import { AuthLayoutComponent } from "./layouts/auth/auth-layout.component";
 
@@ -56,4 +57,20 @@ export const AppRoutes: Routes = [
       },
     ],
   },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module')
+      .then(m => m.AdminModule),
+  },
 ];
+
+const config: ExtraOptions = {
+  useHash: true,
+  scrollPositionRestoration: 'enabled',
+};
+@NgModule({
+  imports: [RouterModule.forRoot(AppRoutes, config)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {
+}
