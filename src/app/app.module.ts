@@ -55,11 +55,11 @@ import { RegisterComponent } from "./authentification/register/register.componen
 import { ForgotPasswordComponent } from "./authentification/forgot-password/forgot-password.component";
 import { BecomeAPartnerComponent } from "./authentification/become-a-partner/become-a-partner.component";
 
-import { DemandsComponent } from "./machine-owner/demands/demands.component";
-import { BiddingComponent } from "./machine-owner/bidding/bidding.component";
-import { ExploreComponent } from "./machine-owner/explore/explore.component";
-import { RepairComponent } from "./machine-owner/repair/repair.component";
-import { RecordsComponent } from "./machine-owner/records/records.component";
+// import { DemandsComponent } from "./machine-owner/demands/demands.component";
+// import { BiddingComponent } from "./machine-owner/bidding/bidding.component";
+// import { ExploreComponent } from "./machine-owner/explore/explore.component";
+// import { RepairComponent } from "./machine-owner/repair/repair.component";
+// import { RecordsComponent } from "./machine-owner/records/records.component";
 import { PendingComponent } from "./admin/demands/pending/pending.component";
 import { AddComponent } from "./admin/machine-owner/add/add.component";
 import { VerificationComponent } from "./admin/machine-owner/verification/verification.component";
@@ -111,11 +111,11 @@ import { SidebarComponent } from "./client/sidebar/sidebar.component";
     RegisterComponent,
     ForgotPasswordComponent,
     BecomeAPartnerComponent,
-    DemandsComponent,
-    BiddingComponent,
-    ExploreComponent,
-    RepairComponent,
-    RecordsComponent,
+    // DemandsComponent,
+    // BiddingComponent,
+    // ExploreComponent,
+    // RepairComponent,
+    // RecordsComponent,
     PendingComponent,
     AddComponent,
     VerificationComponent,

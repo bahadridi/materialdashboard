@@ -1,4 +1,5 @@
-import {ExtraOptions, RouterModule, Routes} from '@angular/router';
+import { Routes , ExtraOptions , RouterModule } from "@angular/router";
+
 import {NgModule} from '@angular/core';
 import { AdminLayoutComponent } from "./layouts/admin/admin-layout.component";
 import { AuthLayoutComponent } from "./layouts/auth/auth-layout.component";
@@ -38,6 +39,11 @@ export const AppRoutes: Routes = [
       {
         path: "forms",
         loadChildren: "./forms/forms.module#Forms",
+      },
+      {
+        path: 'machine-owner',
+        loadChildren: () => import('./machine-owner/machine-owner.module')
+          .then(m => m.MachineOwnerModule),
       },
     ],
   },
